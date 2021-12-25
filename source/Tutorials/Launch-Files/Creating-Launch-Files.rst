@@ -207,6 +207,17 @@ To launch ``turtlesim_mimic_launch.py``, enter into the directory you created ea
 
 .. note::
 
+  In order to have ROS recognize the launch file, we add the following lines to ``CMakeLists.txt``:
+
+  .. code-block:: xml
+
+    install(DIRECTORY
+      launch
+      DESTINATION share/{$PROJECT_NAME}/
+    )
+ 
+.. note::
+
   For packages with launch files, it is a good idea to add an ``exec_depend`` dependency on the ``ros2launch`` package in your package's ``package.xml``:
 
   .. code-block:: xml
